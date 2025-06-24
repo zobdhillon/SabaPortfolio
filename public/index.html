@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0070f3">
+    <meta name="description" content="CopyWriter - Saba's Portfolio">
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Saba's Portfolio</title>
+
+</head>
+
+<body class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300">
+    <!-- Dark mode background gradients-->
+    <div class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+    </div>
+
+    <!-- Header -->
+    <header
+        class="fixed w-full top-0 z-50  dark:bg-dark-background/95 backdrop-blur-sm shadow-sm transition-all duration-300 ">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img class="w-32 h-auto flex-shrink-0 logo" src="../assets/logos/black-logo.png">
+                </div>
+                <ul class="hidden md:flex space-x-8 font-semibold">
+                    <li>
+                        <a href="#hero"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                    </li>
+                    <li>
+                        <a href="#services"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Services</a>
+                    </li>
+                     <li>
+                        <a href="#testimonials"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <button class="" id="themeToggle"><i
+                            class="fa-solid fa-moon text-gray-600 dark:text-gray-400"></i></button>
+                    <button class="md:hidden p-2" id="menuToggle">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                            <span class="w-full h-0.5 bg-gray-600 dark:bg-gray-400 transition-all"></span>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--Mobile Menu-->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/70 dark:bg-dark-background/80 z-50 transform translate-x-full transition-transform duration-300 md:hidden backdrop-blur-md" >
+        <div class="container mx-auto px-4 h-full flex flex-col">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img class="w-32 h-auto flex-shrink-0 logo" src="../assets/logos/black-logo.png">
+                </div>
+                  <button id="closeMenu" class="p-2">
+                <i class="fa-solid fa-square-xmark text-gray-600 dark:text-gray-400 text-2xl"></i>
+            </button>
+            </div>
+            <ul class="flex-1 flex flex-col justify-center items-center space-y-8">
+                <li>
+                    <a href="#hero" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                </li>
+                <li>
+                    <a href="#services" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Services</a>
+                </li>
+                <li>
+                    <a href="#testimonial" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Testimonial</a>
+                </li>
+                <li>
+                    <a href="#contact" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                </li>
+            </ul>          
+        </div>
+
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class=" text-4xl md:text-6xl font-bold mb-6">
+                    The <span
+                        class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">CopyWriter</span>
+                    Who Converts
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                    Versatile Content Specialist | <strong>Expert in Copywriting, SEO, and Strategic
+                        Storytelling</strong> Across Digital Platforms.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#contact"
+                        class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow:blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10">
+                        Contact Me
+                    </a>
+                    <a href="#about"
+                        class="px-8 py-3 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors">Learn
+                        More</a>
+                </div>
+            <div class="bg-gray-200 dark:bg-dark-background-secondary rounded-lg shadow-sm max-w-2xl mx-auto border border-gray-100 dark:border-gray-800"
+            id="writing-sample-container">
+            <!-- Minimal Header -->
+            <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-800">
+                <div class="text-xs font-medium text-gray-600 dark:text-gray-300">COPYWRITER'S JOURNAL</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                    <span id="current-date"></span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 font-mono terminal-content bg-gray-100 dark:bg-gray-900">
+                <div class="text-gray-700 dark:text-gray-300 mb-3 leading-snug min-h-[50px] text-xl">
+                    <div class="typing-container inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"></div> <!-- Added inline-block here -->
+                </div>
+                <div class="flex gap-2 text-xs justify-center">
+                    <span class="px-2 py-0.5 bg-white dark:bg-gray-800 rounded">Brand Voice</span>
+                    <span class="px-2 py-0.5 bg-white dark:bg-gray-800 rounded">Conversion Copy</span>
+                    <span class="px-2 py-0.5 bg-white dark:bg-gray-800 rounded">SEO Content</span>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features"
+        class="opacity-0 py-24 bg-gray-50  dark:bg-dark-background-secondary  translate-y-4 transition-all duration-500">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What's in My Toolkit</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">
+                Everything needed to create compelling content that drives results.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!--Feature Card 1-->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transform-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-paintbrush text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 ">Pixel-Perfect Words</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Whether it’s a sleek interface or a killer headline,
+                        every word is precision-tuned to engage, persuade, and stick.</p>
+                </div>
+                <!--Feature Card 2-->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transform-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 ">Conversion Lightning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Copy that strikes fast and hard, turning scanners into
+                        buyers with electrifying clarity and strategic CTAs.</p>
+                </div>
+                <!--Feature Card 3-->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transform-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chess-queen text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 ">Strategic Storytelling</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Narratives that position your brand as the hero, crafted
+                        to build loyalty and outmaneuver competitors.</p>
+                </div>
+                <!--Feature Card 4-->
+                <div
+                    class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transform-y-1">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chart-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 ">Data-Driven Voice</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Where analytics meet artistry, optimizing every word
+                        based on real user behavior and A/B insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="opacity-0 py-24 translate-y-4 transition-all duration-500">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                        I'm a CopyWriter with a passion for crafting compelling narratives that not only engage but also
+                        convert.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        With a background in digital marketing and a keen eye for detail, I specialize in creating
+                        content that resonates with audiences and drives results.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        When I'm not writing, you can find me exploring the latest trends in technology and design,
+                        always looking for new ways to enhance my craft.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact"
+                            class="px-8 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 shadow-blue-200/20 dark:shadow-blue-700/10 text-center">Contact
+                            Me</a>
+                        <a href="#"
+                            class="px-8 py-3 bg-white dark:bg-dark-background-secondary dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors text-center">Download
+                            Resume</a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="w-72 h-72 mx-auto animate-morph bg-gradient-to-br from-primary via-secondary to-accent rounded-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/50 to-accent/50 rounded-full blur-2xl animate-morph"></div>
+                        <img src="../assets/About.png" alt="Profile Photo" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="services" class="opacity-0 py-24 bg-gray-50 dark:bg-dark-background-secondary">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Services</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-16">Expert writing solutions tailored to your business needs</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+        <!-- Website Copywriting -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-blue-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-pen-nib text-blue-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Website Copywriting</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1 text-sm"></i> Homepage & About Us</li>
+                <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1 text-sm"></i> Service Pages</li>
+                <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1 text-sm"></i> Landing Pages</li>
+                <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1 text-sm"></i> UX-focused microcopy</li>
+            </ul>
+        </div>
+
+        <!-- Blog & Article Writing -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-green-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-blog text-green-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Blog & Article Writing</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1 text-sm"></i> SEO-optimized blog posts</li>
+                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1 text-sm"></i> Lifestyle articles</li>
+                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1 text-sm"></i> Travel & experience blogs</li>
+                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1 text-sm"></i> Long-form content</li>
+            </ul>
+        </div>
+
+        <!-- Sales & Marketing Copy -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-purple-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-bullhorn text-purple-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Sales & Marketing Copy</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-purple-500 mr-2 mt-1 text-sm"></i> High-converting sales pages</li>
+                <li class="flex items-start"><i class="fas fa-check text-purple-500 mr-2 mt-1 text-sm"></i> Email sequences</li>
+                <li class="flex items-start"><i class="fas fa-check text-purple-500 mr-2 mt-1 text-sm"></i> Facebook/Google ads</li>
+                <li class="flex items-start"><i class="fas fa-check text-purple-500 mr-2 mt-1 text-sm"></i> Lead magnets</li>
+            </ul>
+        </div>
+
+        <!-- Product & E-commerce Content -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-red-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-cart-shopping text-red-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">E-commerce Content</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-red-500 mr-2 mt-1 text-sm"></i> Amazon product descriptions</li>
+                <li class="flex items-start"><i class="fas fa-check text-red-500 mr-2 mt-1 text-sm"></i> Shopify listings</li>
+                <li class="flex items-start"><i class="fas fa-check text-red-500 mr-2 mt-1 text-sm"></i> Product titles & bullets</li>
+                <li class="flex items-start"><i class="fas fa-check text-red-500 mr-2 mt-1 text-sm"></i> Category descriptions</li>
+            </ul>
+        </div>
+
+        <!-- Academic & Research Writing -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-yellow-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-graduation-cap text-yellow-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Academic Writing</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-yellow-500 mr-2 mt-1 text-sm"></i> Research papers</li>
+                <li class="flex items-start"><i class="fas fa-check text-yellow-500 mr-2 mt-1 text-sm"></i> Technical reports</li>
+                <li class="flex items-start"><i class="fas fa-check text-yellow-500 mr-2 mt-1 text-sm"></i> Dissertations & theses</li>
+                <li class="flex items-start"><i class="fas fa-check text-yellow-500 mr-2 mt-1 text-sm"></i> Literature reviews</li>
+            </ul>
+        </div>
+
+        <!-- Social Media Content -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-teal-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-hashtag text-teal-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Social Media Content</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1 text-sm"></i> Platform-specific posts</li>
+                <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1 text-sm"></i> Content calendars</li>
+                <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1 text-sm"></i> Hashtag strategies</li>
+                <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1 text-sm"></i> Reels/TikTok scripts</li>
+            </ul>
+        </div>
+
+        <!-- Press Releases & PR -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-indigo-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-indigo-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-newspaper text-indigo-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Press & PR Content</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-indigo-500 mr-2 mt-1 text-sm"></i> Press releases</li>
+                <li class="flex items-start"><i class="fas fa-check text-indigo-500 mr-2 mt-1 text-sm"></i> Media announcements</li>
+                <li class="flex items-start"><i class="fas fa-check text-indigo-500 mr-2 mt-1 text-sm"></i> Company statements</li>
+                <li class="flex items-start"><i class="fas fa-check text-indigo-500 mr-2 mt-1 text-sm"></i> Executive communications</li>
+            </ul>
+        </div>
+
+        <!-- Podcast Content -->
+        <div class="bg-white dark:bg-dark-background p-8 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-pink-500 transform hover:-translate-y-1">
+            <div class="w-16 h-16 bg-pink-500/10 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-podcast text-pink-500 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Podcast Content</h3>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                <li class="flex items-start"><i class="fas fa-check text-pink-500 mr-2 mt-1 text-sm"></i> Episode summaries</li>
+                <li class="flex items-start"><i class="fas fa-check text-pink-500 mr-2 mt-1 text-sm"></i> SEO-optimized show notes</li>
+                <li class="flex items-start"><i class="fas fa-check text-pink-500 mr-2 mt-1 text-sm"></i> Intro/outro scripts</li>
+                <li class="flex items-start"><i class="fas fa-check text-pink-500 mr-2 mt-1 text-sm"></i> Guest interview questions</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Optional Services Section -->
+    <div class="container mx-auto px-4 mt-24">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-12">Additional Services</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <!-- Content Strategy -->
+            <div class="bg-white dark:bg-dark-background p-6 rounded-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fa-solid fa-chess text-blue-500 text-xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold">Content Strategy</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Planning & roadmap development</p>
+            </div>
+            
+            <!-- Editing & Proofreading -->
+            <div class="bg-white dark:bg-dark-background p-6 rounded-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fa-solid fa-spell-check text-green-500 text-xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold">Editing & Proofreading</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Polishing existing content</p>
+            </div>
+            
+            <!-- Multilingual Content -->
+            <div class="bg-white dark:bg-dark-background p-6 rounded-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fa-solid fa-language text-purple-500 text-xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold">Multilingual Content</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Localized translations</p>
+            </div>
+            
+            <!-- Brand Voice -->
+            <div class="bg-white dark:bg-dark-background p-6 rounded-lg border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <i class="fa-solid fa-microphone text-yellow-500 text-xl"></i>
+                </div>
+                <h4 class="text-lg font-semibold">Brand Voice Development</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Unique tone & style guides</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--Testimonial Section-->
+
+       <section id="testimonials" class="opacity-0 py-24 translate-y-4 transition-all duration-500">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800 dark:text-white">Client Testimonials</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Here's what clients are saying about my copywriting services
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card bg-white dark:bg-dark-background-secondary p-8 rounded-xl shadow-lg relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="relative z-10">
+                        <div class="stars mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                            "Working with this copywriter transformed our brand voice. The website copy they crafted increased our conversion rate by 42% in just three months. Their strategic approach to messaging is exceptional."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" class="client-image rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Sarah Johnson</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Marketing Director, TechVision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card bg-white dark:bg-dark-background-secondary p-8 rounded-xl shadow-lg relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="relative z-10">
+                        <div class="stars mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                            "The email campaign copy exceeded our expectations. Open rates increased by 68% and click-through rates doubled. This copywriter has an incredible talent for creating compelling CTAs that actually work."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Michael Chen" class="client-image rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Michael Chen</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">CEO, GrowthHack Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                              
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card bg-white dark:bg-dark-background-secondary p-8 rounded-xl shadow-lg relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="relative z-10">
+                        <div class="stars mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                            "The sales page copy they created converted at 8.3% - our highest ever. They perfectly balanced emotional appeal with logical persuasion. This is the ROI-focused copywriter every business needs."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Robert Kim" class="client-image rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Robert Kim</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Founder, Peak Performance Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+
+    <section id="contact" class="opacity-0 bg-gray-50 py-16 md:py-24 translate-y-4 transition-all duration-500 dark:bg-dark-background-secondary">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get In Touch</h2>
+    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 text-center mb-12">Interested In Working Together? Let's Connect</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <!-- Email -->
+        <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-envelope text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Email</h3>
+          <p class="text-gray-600 dark:text-gray-400">sabachaudary379@gmail.com</p>
+        </div>
+
+        <!-- Location -->
+        <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-map-location-dot text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Location</h3>
+          <p class="text-gray-600 dark:text-gray-400">Lahore, Pakistan</p>
+        </div>
+
+        <!-- Social -->
+        <div class="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-globe text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Social</h3>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-dark-background-secondary rounded-full flex items-center justify-center text-gray-600 hover:text-primary dark:hover:text-primary dark:text-gray-400 transition-all duration-300">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2 mt-10 lg:mt-0">
+        <form id="contactForm" class="bg-white dark:bg-dark-background p-6 md:p-8 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+          <div class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+              <input type="text" name="name" id="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+              <input type="email" name="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+              <textarea name="message" id="message" rows="5" required class="resize-none w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-background-secondary text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full px-8 py-3 bg-primary text-white rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md dark:hover:shadow-blue-500/20">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!--Footer-->
+   <footer class="py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img class="w-32 h-auto flex-shrink-0 logo" src="../assets/logos/black-logo.png">
+            </div>
+            <ul class="flex flex-wrap justify-center gap-6 mb-0">
+                <li>
+                    <a href="#hero" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                </li>
+                <li>
+                    <a href="#services" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Services</a>
+                </li>
+                <li>
+                    <a href="#testimonials" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Testimonials</a>
+                </li>
+                <li>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                </li>
+            </ul>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>          
+        </div>
+        <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p>&copy; 2025 Saba Porfolio. All Rights Reserved.</p>
+            </div>
+    </div>
+   </footer>
+
+   <script type="text/javascript" src=""></script>
+   <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+</body>
+
+</html>
